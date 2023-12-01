@@ -9,15 +9,15 @@ function countryDetails() {
 
   //!Fetch and Promise
   fetch(url)
-  .then((data) => data.json())
-  .then((countries) => {
-    console.log(countries);
+    .then((data) => data.json())
+    .then((countries) => {
+      console.log(countries);
 
-    //! forEach loop is used to map data
-    countries.forEach((country) => {
-      const division = document.createElement("div");
-      division.setAttribute("class", "row");
-      division.innerHTML = `<div class="col-sm-6 col-md-4 col-lg-4 col-xl-4">
+      //! forEach loop is used to map data
+      countries.forEach((country) => {
+        const division = document.createElement("div");
+        division.setAttribute("class", "row");
+        division.innerHTML = `<div class="col-sm-6 col-md-4 col-lg-4 col-xl-4">
                                       <div class="card h-100">
                                           <div class="card-header">${country.name.common}</div>
                                           <img src="${country.flags?.png}" class="card-img-top">
@@ -31,10 +31,10 @@ function countryDetails() {
                                       </div>
                                   </div>
                                   <br />`;
-      container.appendChild(division);
-    });
-  })
-  .catch((error) => console.log(error));
+        container.appendChild(division);
+      });
+    })
+    .catch((error) => console.log(error));
 }
 
 //!Function call
